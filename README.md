@@ -11,8 +11,8 @@ This documentation guides you through setting up a Docker container for ROS Noet
 ## Setup Instructions
 
 ### Step 1: Setting Up the Docker Container
-- **Environment**: Windows - Terminal as System Administrator
-- **Command**:  
+- **Environment**: Windows - Terminal 
+- To dock local file from your desktop to docker container with two ports 6080:80 and 10000:10000 for ROS noetic version:
   ```
   docker run -v <working directory>\<local file name>:/home/ubuntu/catkin_ws:cached -p 6080:80 -p 10000:10000 --shm-size=1024m tiryoh/ros-desktop-vnc:noetic
   ```
