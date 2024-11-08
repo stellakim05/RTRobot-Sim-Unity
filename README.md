@@ -67,7 +67,7 @@ This documentation guides you through setting up a Docker container for ROS Noet
 ## Additional Notes
 - Ensure you replace placeholders like `<package_name>` and `<python_file.py>` with actual names relevant to your project.
 - Red arow ROS IP in Unity means ROS server is not connected yet, so you need to connect the server again.
--If you want to stop the movement, stop either publish or subscribe terminal.
+- If you want to stop the movement, stop either publish or subscribe terminal.
 
 ## To open server
 - **Commands**:
