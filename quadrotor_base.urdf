@@ -1,0 +1,53 @@
+<robot name="quadrotor_base">
+
+  <!-- Main quadrotor link -->
+  <link name="base_link">
+    <inertial>
+      <mass value="1.477"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.01152" ixy="0.0" ixz="0.0" iyy="0.01152" iyz="0.0" izz="0.0218"/>
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="quadrotor_base.dae"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="quadrotor_base.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Sonar height sensor -->
+  <link name="sonar">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="sonar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="sonar"/>
+    <origin xyz="-0.16 0.0 -0.012" rpy="0 1.5708 0"/>
+  </joint>
+
+</robot>
