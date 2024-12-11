@@ -21,44 +21,37 @@ def handleIJKLKeys(key):
     global x, y, z
     # Bug fix: Key sequences need proper handling
     if len(key) == 1:  # Single-character keys
-        if key == 'i':  # Move forward
+        if key == 'w':  # Move forward
             x = speed
             y = 0
             z = 0
             print("Moving forward")
-        elif key == 'k':  # Move backward
+        elif key == 's':  # Move backward
             x = -speed
             y = 0
             z = 0
             print("Moving backward")
-        elif key == 'j':  # Move left
+        elif key == 'a':  # Move left
             x = 0
             y = -speed
             z = 0
             print("Moving left")
-        elif key == 'l':  # Move right
+        elif key == 'd':  # Move right
             x = 0
             y = speed
             z = 0
             print("Moving right")
+        elif key == 'w':
+            z = speed
+            print("Moving up")
+        elif key == 's':
+            z = -speed
+            print("Moving down")
         else:
             x = 0
             y = 0
             z = 0
             print("Invalid key. Use i/j/k/l for control.")
-
-
-def handleVerticalKeys(key):
-    """Handle 'w' and 's' keys for vertical movement control (up/down)."""
-    global z
-    if key == 'w':
-        z = speed
-        print("Moving up")
-    elif key == 's':
-        z = -speed
-        print("Moving down")
-    else:  # Added: Reset z when no vertical movement key is pressed
-        z = 0
 
 if __name__ == "__main__":
     settings = termios.tcgetattr(sys.stdin)
